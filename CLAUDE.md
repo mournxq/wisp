@@ -17,8 +17,9 @@ Open-source AI alternative to Google Assistant, powered by Claude. Android app f
 
 ## Current status
 
-- Phase 1 done. Repo: https://github.com/mournxq/wisp (public, MIT). Empty app runs on the phone; `ClaudeSdkCheck` is a temporary placeholder that Phase 2 replaces.
-- Next: Phase 2 in `docs/ROADMAP.md`. Plan it with the maintainer before writing code.
+- Phase 2 built on branch `phase-2-text-chat`: text chat, encrypted key, model picker, error messages. Tested on the phone except a real conversation, because the maintainer has no funded API key yet.
+- Next: the maintainer tests with a real key; then Phase 3. Plan each phase with the maintainer before writing code.
+- Phone UI tests over adb: `uiautomator dump` to find elements by text, `input tap`/`input text`. In Git Bash set `MSYS_NO_PATHCONV=1`, or `/sdcard/...` paths get rewritten. Never type a real API key; fake test values only.
 - The maintainer dictates by voice: "Cloud" in their messages usually means Claude.
 
 ## Building

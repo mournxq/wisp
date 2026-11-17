@@ -4,6 +4,10 @@ Newest entries on top in each section. Format: date, decision, reason.
 
 ## Decided
 
+- **2026-11-17** Requests use effort `low` and leave thinking on its default (adaptive). Turning thinking off works differently per model (Haiku 5.5 allows it, Sonnet 5.5 needs `between_tools`, Opus 5.5 and Fable reject it), so low effort is the one setting that works everywhere. The model picker only lists the 5.x families, which all accept `effort`.
+- **2026-11-17** Claude's complete reply (`Message.toParam()`, thinking blocks included) goes back into the history unchanged, so switching models mid-chat stays valid. A failed or refused request leaves the history untouched.
+- **2026-11-17** API key encrypted with AES-GCM; the AES key lives in the Android Keystore. Settings are excluded from cloud backup and device transfer. `EncryptedSharedPreferences` not used (deprecated).
+- **2026-11-17** Work happens on branches, merged through pull requests that GitHub Actions builds.
 - **2026-11-17** Build setup: Gradle 9.9.1 through the wrapper, Android Gradle plugin 9.5.1, Kotlin 2.4.21, Compose BOM 2026.09.00, Anthropic Java SDK 3.9.0, JUnit 6. compileSdk and targetSdk 37, minSdk 31 (Android 12). App ID `io.github.mournxq.wisp`, permanent. Java bytecode target 17, built with JDK 25.
 - **2026-11-17** License: MIT. Public repo `mournxq/wisp` on GitHub, branch `main`.
 - **2026-11-17** The official Claude app is not an option as the assistant; the maintainer knows it well and it does not do the job. Wisp gets built with its full scope.
@@ -42,6 +46,8 @@ Newest entries on top in each section. Format: date, decision, reason.
 
 ## Research notes
 
+- **2026-11-17 R8 and the SDK:** once the app calls the SDK for real, R8 fails on `com.google.auto.value.AutoValue`, an annotation referenced by the SDK's OpenTelemetry dependency. `-dontwarn` for it in `app/proguard-rules.pro` is enough. The SDK ships its own keep rules; a sample reply with a thinking block parsed and round-tripped correctly in the shrunk build on the phone.
+- **2026-11-17 SDK 3.9.0 API notes:** `MessageParam` has no builder, use `MessageParam.ofUser(text)`; `errorType()` is deprecated in favour of `type()`.
 - **2026-11-17 Anthropic Java SDK on Android:** verified on the Nothing Phone (model A059, Android 17, API 37). Client creation and request serialization work in the debug build and in the R8-shrunk release build without extra keep rules. Release APK 3.6 MB, cold start 0.4 s.
 - **2026-11-17 Official Claude Android app:** per the Claude help center it sets alarms and timers, reads and creates calendar events, uses location and Maps, and drafts messages for WhatsApp and others, which the user sends by tapping. It does not read existing messages. Default-assistant support is not documented; a user-filed GitHub issue (anthropics/claude-code#41696) mentions the official app holding the assistant role. Claude Duet (launched October 2026) is a separate agentic app, waitlist, Pro/Max, US.
 - **2026-11-17 Claude memory:** claude.ai memory and chats have no API for third-party apps. Memory can be exported (help center: import and export your memory).

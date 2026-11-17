@@ -26,11 +26,12 @@ Every phase ends with a test gate. Claude runs what can be tested on the PC (uni
 
 **Gate:** the empty app runs on the phone, built from a clean checkout and by GitHub Actions.
 
-## Phase 2: Text chat on Android (next)
+## Phase 2: Text chat on Android (built, waiting for a real key)
 
-- [ ] Settings: API key stored securely, model picker filled from the Models API
-- [ ] Type a question, get an answer from Claude
-- [ ] Clear messages for no key, wrong key, no internet, no credits
+- [x] Settings: API key stored securely, model picker filled from the Models API
+- [x] Type a question, get an answer from Claude (reply parsing verified offline in the R8 build)
+- [x] Clear messages for no key, wrong key, no internet, no credits (no credits only unit-tested)
+- [ ] Real conversation with a funded key, including a follow-up question and a model switch
 
 **Gate:** a real conversation works; every error case shows a message instead of crashing.
 
