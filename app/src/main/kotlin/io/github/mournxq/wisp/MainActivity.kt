@@ -15,7 +15,12 @@ import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import io.github.mournxq.wisp.core.ClaudeSdkCheck
 import io.github.mournxq.wisp.core.Wisp
+
+private fun sdkStatus(): String =
+    runCatching { ClaudeSdkCheck.requestJson() }
+        .fold({ "Claude SDK OK: $it" }, { "Claude SDK error: $it" })
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,6 +36,7 @@ class MainActivity : ComponentActivity() {
                     ) {
                         Text(Wisp.NAME, style = MaterialTheme.typography.displayMedium)
                         Text(Wisp.greeting(), style = MaterialTheme.typography.bodyLarge)
+                        Text(sdkStatus(), style = MaterialTheme.typography.bodySmall)
                     }
                 }
             }

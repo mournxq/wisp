@@ -16,6 +16,8 @@ kotlin {
 }
 
 dependencies {
+    implementation(libs.anthropic)
+
     testImplementation(platform(libs.junit.bom))
     testImplementation(libs.junit.jupiter)
     testImplementation(kotlin("test"))
