@@ -4,7 +4,7 @@
 
 Every phase ends with a test gate. Claude runs what can be tested on the PC (unit tests, emulator); the maintainer tests on the real phone.
 
-## Phase 0: Discovery (current)
+## Phase 0: Discovery (done)
 
 - [x] Vision and core features agreed, written into `FEATURES.md`
 - [x] AI backend approach decided
@@ -15,13 +15,14 @@ Every phase ends with a test gate. Claude runs what can be tested on the PC (uni
 
 **Gate:** every open question in `DECISIONS.md` is answered or explicitly postponed.
 
-## Phase 1: Foundations
+## Phase 1: Foundations (current)
 
-- [ ] Gradle project in Kotlin, SDK platform 37 installed, works with the existing JDK
-- [ ] Core module without Android dependencies, so a PC app can reuse it later
-- [ ] Empty app builds and starts on the Nothing Phone
-- [ ] `.gitignore` that keeps secrets and build output out of the repo
-- [ ] GitHub Actions builds the APK on every push
+- [x] Gradle project in Kotlin, SDK platform 37 installed, works with the existing JDK
+- [x] Core module without Android dependencies, so a PC app can reuse it later
+- [x] Anthropic Java SDK compiles and survives R8 shrinking
+- [ ] Empty app builds and starts on the Nothing Phone, SDK check passes at runtime
+- [x] `.gitignore` that keeps secrets and build output out of the repo
+- [x] GitHub Actions builds the APK on every push
 
 **Gate:** the empty app runs on the phone, built from a clean checkout and by GitHub Actions.
 

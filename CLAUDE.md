@@ -21,6 +21,14 @@ Open-source AI alternative to Google Assistant, powered by Claude. Android app f
 - Next: Phase 1 in `docs/ROADMAP.md`. Plan it with the maintainer before writing code.
 - The maintainer dictates by voice: "Cloud" in their messages usually means Claude.
 
+## Building
+
+- Modules: `core` (plain Kotlin, no Android code, unit tests) and `app` (Android, Jetpack Compose). Versions live in `gradle/libs.versions.toml`.
+- `./gradlew :core:test :app:assembleDebug` for tests and a debug APK. `:app:assembleRelease` runs R8 (needs the 4 GB heap set in `gradle.properties`).
+- Local SDK path goes in `local.properties` (not committed): `sdk.dir=C\:/Users/jspme/AppData/Local/Android/Sdk`. The SDK has the new `android` CLI in `cmdline-tools/latest/bin/android.exe` (`android sdk install ...`); `sdkmanager` is deprecated.
+- Install on the phone: `adb install -r app/build/outputs/apk/debug/app-debug.apk`; screenshot to check: `adb exec-out screencap -p > shot.png`.
+- GitHub Actions (`.github/workflows/build.yml`) runs the same build on every push and uploads the debug APK.
+
 ## Project rules
 
 - No API keys, tokens or personal data in the repo, ever. It will be public.

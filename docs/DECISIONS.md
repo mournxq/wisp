@@ -4,6 +4,7 @@ Newest entries on top in each section. Format: date, decision, reason.
 
 ## Decided
 
+- **2026-11-17** Build setup: Gradle 9.9.1 through the wrapper, Android Gradle plugin 9.5.1, Kotlin 2.4.21, Compose BOM 2026.09.00, Anthropic Java SDK 3.9.0, JUnit 6. compileSdk and targetSdk 37, minSdk 31 (Android 12). App ID `io.github.mournxq.wisp`, permanent. Java bytecode target 17, built with JDK 25.
 - **2026-11-17** License: MIT. Public repo `mournxq/wisp` on GitHub, branch `main`.
 - **2026-11-17** The official Claude app is not an option as the assistant; the maintainer knows it well and it does not do the job. Wisp gets built with its full scope.
 - **2026-11-17** Context block with every request: time, place name and current weather, kept small. Location is the last known position (no GPS fix per request, saves battery); weather cached for 30 minutes so it does not slow down answers. Exact coordinates only go out when a request needs them (navigation, places nearby).
@@ -30,7 +31,7 @@ Newest entries on top in each section. Format: date, decision, reason.
 
 ## Proposed, waiting for OK
 
-- **To verify in Phase 1:** Anthropic's official Java SDK on Android (Kotlin can use it), and Gradle with the installed JDK 25. Android 17 needs SDK platform 37, only 36.1 is installed.
+- **To verify in Phase 1:** Anthropic's Java SDK at runtime on the phone (it already compiles and passes R8).
 - **Sync, for when the PC app comes:** the PC app is the sync partner, optionally the homelab. Phone works fully on its own. Pairing once with a code. Open problem: reaching the PC from mobile data (Tailscale or similar).
 - **Easy reinstall on a new phone:** APK from GitHub Releases, built by GitHub Actions. Settings and memory exportable to a file so a new phone starts where the old one stopped.
 - **Calendar through Android's own calendar store** (`CalendarContract`), which already holds the synced Google Calendar. No Google login or Google Cloud project needed.
