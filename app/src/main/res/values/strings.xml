@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Wisp</string>
+    <string name="new_chat">Neu</string>
+    <string name="settings">Einstellungen</string>
+    <string name="input_hint">Frag Wisp etwas</string>
+    <string name="send">Senden</string>
+    <string name="thinking">Wisp denkt nach…</string>
+    <string name="key_saved">Ein API-Schlüssel ist gespeichert.</string>
+    <string name="key_missing">Noch kein API-Schlüssel gespeichert. Erstell einen auf console.anthropic.com und füg ihn hier ein.</string>
+    <string name="api_key">Anthropic API-Schlüssel</string>
+    <string name="save_and_check">Speichern und prüfen</string>
+    <string name="checking_key">Schlüssel wird geprüft…</string>
+    <string name="key_ok">Schlüssel funktioniert.</string>
+    <string name="model">Modell</string>
+    <string name="current_model">Aktuelles Modell: %1$s</string>
+    <string name="delete_key">Schlüssel löschen</string>
+    <string name="back">Zurück</string>
+    <string name="error_no_key">Kein API-Schlüssel gespeichert. Trag ihn in den Einstellungen ein.</string>
+    <string name="error_wrong_key">Der API-Schlüssel wird nicht angenommen. Prüf ihn in den Einstellungen.</string>
+    <string name="error_no_credits">Kein Guthaben mehr auf dem Anthropic-Konto. Lad in der Console Guthaben auf.</string>
+    <string name="error_rate_limited">Zu viele Anfragen gerade. Warte kurz und versuch es nochmal.</string>
+    <string name="error_overloaded">Claude ist gerade überlastet. Versuch es gleich nochmal.</string>
+    <string name="error_offline">Keine Internetverbindung.</string>
+    <string name="error_refused">Claude hat diese Anfrage abgelehnt.</string>
+    <string name="error_other">Unbekannter Fehler: %1$s</string>
+</resources>
