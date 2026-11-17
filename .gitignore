@@ -1,0 +1,27 @@
+# Secrets
+*.jks
+*.keystore
+keystore.properties
+local.properties
+.env
+*.env
+secrets.properties
+
+# Gradle and build output
+.gradle/
+build/
+.kotlin/
+*.apk
+*.aab
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# Claude Code personal settings
+.claude/settings.local.json
+
+# OS
+Thumbs.db
+.DS_Store
