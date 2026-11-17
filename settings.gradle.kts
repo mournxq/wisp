@@ -15,3 +15,6 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "wisp"
+
+include(":core")
+include(":app")
