@@ -31,7 +31,6 @@ Newest entries on top in each section. Format: date, decision, reason.
 
 ## Proposed, waiting for OK
 
-- **To verify in Phase 1:** Anthropic's Java SDK at runtime on the phone (it already compiles and passes R8).
 - **Sync, for when the PC app comes:** the PC app is the sync partner, optionally the homelab. Phone works fully on its own. Pairing once with a code. Open problem: reaching the PC from mobile data (Tailscale or similar).
 - **Easy reinstall on a new phone:** APK from GitHub Releases, built by GitHub Actions. Settings and memory exportable to a file so a new phone starts where the old one stopped.
 - **Calendar through Android's own calendar store** (`CalendarContract`), which already holds the synced Google Calendar. No Google login or Google Cloud project needed.
@@ -43,6 +42,7 @@ Newest entries on top in each section. Format: date, decision, reason.
 
 ## Research notes
 
+- **2026-11-17 Anthropic Java SDK on Android:** verified on the Nothing Phone (model A059, Android 17, API 37). Client creation and request serialization work in the debug build and in the R8-shrunk release build without extra keep rules. Release APK 3.6 MB, cold start 0.4 s.
 - **2026-11-17 Official Claude Android app:** per the Claude help center it sets alarms and timers, reads and creates calendar events, uses location and Maps, and drafts messages for WhatsApp and others, which the user sends by tapping. It does not read existing messages. Default-assistant support is not documented; a user-filed GitHub issue (anthropics/claude-code#41696) mentions the official app holding the assistant role. Claude Duet (launched October 2026) is a separate agentic app, waitlist, Pro/Max, US.
 - **2026-11-17 Claude memory:** claude.ai memory and chats have no API for third-party apps. Memory can be exported (help center: import and export your memory).
 
